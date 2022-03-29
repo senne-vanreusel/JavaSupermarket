@@ -2,6 +2,7 @@ package fact.it.supermarket.model;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+//Senne Van Reusel r0903904
 
 public class Staff extends Person {
     private LocalDate startDate;

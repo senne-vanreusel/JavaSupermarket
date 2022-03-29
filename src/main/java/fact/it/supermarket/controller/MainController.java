@@ -1,7 +1,15 @@
 package fact.it.supermarket.controller;
 
 
+import fact.it.supermarket.model.Customer;
+import fact.it.supermarket.model.Staff;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Controller
 public class MainController {
@@ -11,8 +19,45 @@ public class MainController {
     private ArrayList<Supermarket> supermarketArrayList;
 */
 //    Write your code here
+@RequestMapping("/newCustomer")
+public String newCustomer(){
+    return "1_newCustomer";
+}
 
+@RequestMapping("/infoCustomer")
+public String createCustomer(HttpServletRequest request, Model model){
+    String name = request.getParameter("name");
+    String surname =request.getParameter("surname");
+    int birthYear = Integer.parseInt(request.getParameter("birthYear"));
+    Customer customer = new Customer(name,surname);
+    customer.setYearOfBirth(birthYear);
 
+    model.addAttribute("customer",customer);
+
+    return "2_infoCustomer";
+}
+@RequestMapping("/newStaffMember")
+public String newStaffMember(){
+    return "3_newStaffMember";
+}
+
+@RequestMapping("/infoStaffMember")
+public String name(HttpServletRequest request, Model model){
+    String name = request.getParameter("name");
+    String surname =request.getParameter("surname");
+    String date = request.getParameter("employedSince");
+    boolean student = (request.getParameter("student")!=null);
+
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    LocalDate myDate = LocalDate.parse(date,dtf);
+
+    Staff staff = new Staff(name,surname);
+    staff.setStudent(student);
+    staff.setStartDate(myDate);
+
+    model.addAttribute("staff",staff);
+    return "4_infoStaffMember";
+}
 
 
 

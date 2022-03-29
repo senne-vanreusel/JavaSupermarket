@@ -1,4 +1,5 @@
 package fact.it.supermarket.model;
+//Senne Van Reusel r0903904
 
 public class Person {
     private String firstName;

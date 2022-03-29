@@ -1,6 +1,7 @@
 package fact.it.supermarket.model;
 
 import java.util.ArrayList;
+//Senne Van Reusel r0903904
 
 public class Supermarket {
     private String name;

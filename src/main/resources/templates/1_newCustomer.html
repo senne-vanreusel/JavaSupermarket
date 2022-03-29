@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>New Customer</title>
+</head>
+<body>
+<form action="/infoCustomer">
+    <p>
+        <label for="name">First name</label>
+        <input type="text" name="name" id="name">
+    </p>
+    <p>
+        <label for="surname">Surname</label>
+        <input type="text" name="surname" id="surname">
+    </p>
+    <p>
+        <label for="birthYear">Year of birth</label>
+        <input type="text" name="birthYear" id="birthYear">
+    </p>
+    <p>
+        <input type="submit" name="submit" value="Continue without cardnumber">
+    </p>
+</form>
+<p><a href="/">Back to home page</a></p>
+</body>
+</html>
